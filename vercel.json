@@ -1,0 +1,39 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "outputDirectory": ".",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/public/",
+      "permanent": false
+    },
+    {
+      "source": "/index.html",
+      "destination": "/public/",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/public/",
+      "destination": "https://ahis.kolaborasidakwahpelosok.org/public/"
+    },
+    {
+      "source": "/public/:path*",
+      "destination": "https://ahis.kolaborasidakwahpelosok.org/public/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/public/:path*",
+      "headers": [
+        {
+          "key": "x-vercel-enable-rewrite-caching",
+          "value": "0"
+        }
+      ]
+    }
+  ]
+}
