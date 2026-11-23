@@ -1,0 +1,23 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/public/:path*",
+      "destination": "/",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/:path*",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'none'; style-src 'unsafe-inline'; frame-src https://ahis.kolaborasidakwahpelosok.org; base-uri 'none'; form-action 'none'"
+        }
+      ]
+    }
+  ]
+}
